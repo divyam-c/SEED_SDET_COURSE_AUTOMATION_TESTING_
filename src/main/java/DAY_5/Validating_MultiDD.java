@@ -40,8 +40,6 @@ public class Validating_MultiDD {
 		fruit.selectByIndex(1);
 		
 		
-		//5. Select by value
-		fruit.selectByValue("banana");
-
+		
 	}
 }
