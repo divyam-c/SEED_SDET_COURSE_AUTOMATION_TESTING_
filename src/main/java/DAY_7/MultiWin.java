@@ -24,9 +24,11 @@ public class MultiWin {
 		
 		Set<String> win = driver.getWindowHandles();
 		Iterator <String> i = win.iterator();
+		
 		String win1 = i.next();
 		System.out.println("First window title: "+ driver.getTitle());
 		String win2 = i.next();
+		
 		driver.switchTo().window(win2);
 		System.out.println("Second window title: "+ driver.getTitle());
 		driver.findElement(By.xpath("//a[@href='/portal/newgen/corporate/global_commercial_banking/CRB/trade_finance.htm?eOfferCode=INLOSMTLNTFSW']")).click();
