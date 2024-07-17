@@ -1,12 +1,11 @@
 package Assignments;
 
-import java.io.File;
+import java.time.Duration;
+
 import org.openqa.selenium.By;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
-import org.openqa.selenium.chrome.ChromeOptions;
 
 
 public class Assignment_8 {
@@ -20,7 +19,7 @@ public class Assignment_8 {
 		
 		WebDriver driver = new ChromeDriver();
 		driver.manage().window().maximize();
-		
+		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(5));
 		
 		driver.get("https://demoqa.com/automation-practice-form");
 		
@@ -41,19 +40,16 @@ public class Assignment_8 {
 		driver.findElement(By.id("subjectsInput")).sendKeys(Keys.ENTER);
 		
 		driver.findElement(By.xpath("//*[@id=\"hobbiesWrapper\"]/div[2]/div[1]/label")).click();
+
 		
-		WebElement uploadElement = driver.findElement(By.id("//*[@id=\"uploadPicture\"]"));
-
-        // enter the file path onto the file-selection input field
-        uploadElement.sendKeys("\"C:\\Users\\Lenovo\\OneDrive\\Desktop\\Screenshot 2024-07-12 125953.png\"");
-
-        // check the "I accept the terms of service" check box
-       // driver.findElement(By.id("terms")).click();
-
-        // click the "UploadFile" button
-        //driver.findElement(By.name("send")).click();
 		Thread.sleep(5000);
 		driver.findElement(By.xpath("//textarea[@id='currentAddress']")).sendKeys("Pune");
+		Thread.sleep(5000);
+
+		driver.findElement(By.xpath("//div[contains(text(),'Select City')]")).click();
+		Thread.sleep(5000);
+
+		driver.findElement(By.xpath("//button[@id='submit']")).submit();
 		
 		
 	}
