@@ -11,7 +11,7 @@ import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 
-public class Automobile {
+public class Truck {
 
 	public static void main(String[] args) throws InterruptedException, IOException {
 		// TODO Auto-generated method stub
@@ -20,12 +20,12 @@ public class Automobile {
 		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(2));
 		driver.get("https://www.sparkstone.co.nz/sampleapp/101/index.php");
 		Thread.sleep(5000);
-		driver.findElement(By.xpath("//div[@class='main-navigation']//a[@id='nav_automobile']")).click();
+		driver.findElement(By.xpath("//*[@id=\"nav_truck\"]")).click();
 		
-
-		driver.findElement(By.xpath("//*[@id=\"make\"]/option[15]")).click();
 		
-		driver.findElement(By.xpath("//*[@id=\"engineperformance\"]")).sendKeys("234");
+		driver.findElement(By.xpath("//*[@id=\"make\"]/option[6]")).click();
+		
+		driver.findElement(By.xpath("//*[@id=\"engineperformance\"]")).sendKeys("456");
 		
 		driver.findElement(By.xpath("//*[@id=\"dateofmanufacture\"]")).sendKeys("07/18/2024");
 		
@@ -33,15 +33,19 @@ public class Automobile {
 		
 		driver.findElement(By.xpath("//*[@id=\"fuel\"]/option[2]")).click();
 		
+		driver.findElement(By.xpath("//*[@id=\"payload\"]")).sendKeys("123");
+		
+		driver.findElement(By.xpath("//*[@id=\"totalweight\"]")).sendKeys("1243");
+		
 		driver.findElement(By.xpath("//*[@id=\"listprice\"]")).sendKeys("27520");
 		
 		driver.findElement(By.xpath("//*[@id=\"licenseplatenumber\"]")).sendKeys("MH15NA0004");
 		
 		driver.findElement(By.xpath("//*[@id=\"annualmileage\"]")).sendKeys("150");
-
+		
 		driver.findElement(By.xpath("//*[@id=\"nextenterinsurantdata\"]")).click();
 		
-		driver.findElement(By.xpath("//*[@id=\"firstname\"]")).sendKeys("Divyam");
+		driver.findElement(By.xpath("//*[@id=\"firstname\"]")).sendKeys("Divyam"); 
 		
 		driver.findElement(By.xpath("//*[@id=\"lastname\"]")).sendKeys("Chaudhari");
 		
@@ -68,15 +72,11 @@ public class Automobile {
 		driver.findElement(By.xpath("//*[@id=\"startdate\"]")).sendKeys("08/20/2024");
 		
 		driver.findElement(By.xpath("//*[@id=\"insurancesum\"]/option[3]")).click();
+
+		driver.findElement(By.xpath("//*[@id=\"damageinsurance\"]/option[3]")).click();
 		
-		driver.findElement(By.xpath("//*[@id=\"meritrating\"]/option[3]")).click();
+		driver.findElement(By.xpath("//*[@id=\"insurance-form\"]/div/section[3]/div[4]/p/label[2]/span")).click();
 
-		driver.findElement(By.xpath("//*[@id=\"damageinsurance\"]/option[4]")).click();
-
-		driver.findElement(By.xpath("//*[@id=\"insurance-form\"]/div/section[3]/div[5]/p/label[2]")).click();
-
-		driver.findElement(By.xpath("//*[@id=\"courtesycar\"]/option[3]")).click();
-		
 		driver.findElement(By.xpath("//*[@id=\"nextselectpriceoption\"]")).click();
 		
 		driver.findElement(By.xpath("//*[@id=\"priceTable\"]/tfoot/tr/th[2]/label[4]/span")).click();
@@ -102,7 +102,7 @@ public class Automobile {
 		Thread.sleep(10000);
 		
 		File f1= ((TakesScreenshot)driver).getScreenshotAs(OutputType.FILE);
-		FileUtils.copyFile(f1, new File("E:\\Seed Infotech\\SEED_SDET_COURSE_AUTOMATION_TESTING\\SEED_SDET_COURSE_AUTOMATION_TESTING\\src\\main\\java\\Tricentis\\insurancess.png"));
+		FileUtils.copyFile(f1, new File("E:\\Seed Infotech\\SEED_SDET_COURSE_AUTOMATION_TESTING\\SEED_SDET_COURSE_AUTOMATION_TESTING\\src\\main\\java\\Tricentis\\insurancetruck.png"));
 		
 		
 		driver.findElement(By.xpath("/html/body/div[4]/div[7]/div/button")).click();
@@ -111,56 +111,7 @@ public class Automobile {
 		
 		
 		
-
 		
-
-		
-		
-		
-
-
-		
-		
-		
-		
-		
-		
-		
-
-		
-
-		
-		
-
-		
-		
-
-		
-		
-
-		
-
-		
-
-		
-		
-
-		
-
-		
-		
-
-		
-		
-
-		
-		
-
-		
-		
-
-		
-
 		
 	}
 
